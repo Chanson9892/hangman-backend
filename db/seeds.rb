@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Score.destroy_all
+Word.destroy_all
+
+user1 = User.create(username:'abc123', password: 'abc123')
+
+word1 = Word.create(api_id: 1, word: "banana", definition: 'sweet yellow fruit', synonym: 'plantain')
+
+score1 = Score.create(word_id: word1.id, user_id: user1.id)
